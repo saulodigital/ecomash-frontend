@@ -1,8 +1,17 @@
 spatiebot
 
+# node
 node_modules
 dist
 
+# logs
+*.log
+
+# files and IDE
+.DS_STORE
+*~
+*.swp
+*.swo
 .vscode
 
 # these are generated in the build
