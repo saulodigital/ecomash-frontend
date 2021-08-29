@@ -111,7 +111,7 @@ var spriteByName = {
     emote_clap: ["gui", [268, 476, 64, 64]],
     ui_minimap_box: ["gui", [268, 404, 64, 64]],
     emote_cry: ["gui", [340, 548, 64, 64]],
-    emote_kappa: ["gui", [340, 476, 64, 64]],
+    emote_eco: ["gui", [340, 476, 64, 64]],
     emote_tf: ["gui", [340, 404, 64, 64]],
     emote_lol: ["gui", [412, 548, 64, 64]],
     emote_pepe: ["gui", [412, 476, 64, 64]],
