@@ -263,12 +263,7 @@ var refreshGamesData = function(callback, fromMainPage) {
         dataType: 'json',
         cache: false,
         success: function(response) {
-            // Parse games data in response
-            try {
-                gamesData = JSON.parse(response.data)
-            } catch (e) {
-                return;
-            }
+            gamesData = [{"name":"ECO world","id":"eco","games":[{"type":"1","id":"eco_id","name":"Free For All","nameShort":"ECO #1","host":`${game.modBackendUrl}`,"path":""}]}]
 
             // Set flag from country code in response
             if (game.myFlag == 'xx') {
@@ -314,14 +309,13 @@ var updatePlayersOnline = function() {
         UI.showMessage('alert', '<span class="mainerror">We are currently performing server maintenance<br>Please try again in a few minutes</span>', 30000);
     }
     else {
-        let html = '<div class="item smallerpad">' + playerCount + '</div>player' + (playerCount > 1 ? 's' : '') + ' online';
-        $('#gameinfo').html(html);
+        $('#gameinfo').html('Welcome to the ECOMASH');
     }
 };
 
 var getRegionByName = function(regionName) {
     if (regionName === 'closest') {
-        return { name: 'Closest' };
+        return { name: 'ECO world' };
     }
 
     for (let region of gamesData) {
@@ -331,7 +325,7 @@ var getRegionByName = function(regionName) {
     }
 
     if (game.playRegion = 'closest') {
-        return { name: 'Closest' };
+        return { name: 'ECO world' };
     }
 };
 

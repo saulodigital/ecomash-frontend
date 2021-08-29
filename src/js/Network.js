@@ -429,7 +429,7 @@ Network.setup = function() {
     if (DEVELOPMENT && game.customServerUrl) {
         currentSockUrl = game.customServerUrl;
     } else {
-        currentSockUrl = "wss://" + game.playHost + "/" + game.playPath;
+        currentSockUrl = "ws://" + game.playHost + "/" + game.playPath;
     }
     backupSock && backupSockIsConnected && backupSock.close(),
     (primarySock = new WebSocket(currentSockUrl)).binaryType = "arraybuffer",
