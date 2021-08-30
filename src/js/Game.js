@@ -50,7 +50,7 @@ window.game = {
     buckets: [],
     customServerUrl: null,
     backendHost: "data.airmash.online",
-    modBackendUrl: "192.168.1.29:3501",
+    modBackendUrl: "ecomash.io/wss",
     server: {}
 };
 
