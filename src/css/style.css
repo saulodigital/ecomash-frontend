@@ -138,13 +138,13 @@ input:focus {
     position: absolute;
     top: 28px;
     left: 50%;
-    margin-left: -63px;
     width: 208px;
     height: 60px;
     background-repeat: no-repeat;
     background-size: 100% auto;
     max-width: 118px;
-    background-image: url("https://downloads.intercomcdn.com/i/o/282877/08b4e8f14cd88a39b1f82373/377bdd049dac1cd3aca72f6113cc1b45.png");
+    background-image: url("../img/logo.png");
+    transform: translate3d(-50%,0,0);
     cursor: default;
 }
 
