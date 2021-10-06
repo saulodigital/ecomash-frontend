@@ -4485,3 +4485,11 @@ only screen and (min-height:600px) and (max-height:1024px) and (max-width:1024px
         transform: scale(.95)
     }
 }
+
+.leaderboard {
+    /* Godlike frontend editing skills :)  */
+    display: block !important;
+    margin-top: 17px !important;
+    margin-left: 0px !important;
+    background-color: #b37502 !important;
+}

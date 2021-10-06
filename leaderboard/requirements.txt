@@ -1,0 +1,7 @@
+fastapi==0.68.2
+pydantic==1.8.2
+uvicorn==0.15.0
+fastapi-utils==0.2.1
+aiosqlite==0.17.0
+tortoise-orm==0.17.8
+aiohttp==3.7.4.post0
