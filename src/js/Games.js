@@ -309,7 +309,7 @@ var updatePlayersOnline = function() {
         UI.showMessage('alert', '<span class="mainerror">We are currently performing server maintenance<br>Please try again in a few minutes</span>', 30000);
     }
     else {
-        $('#gameinfo').html('Welcome to the ECOMASH');
+        $('#gameinfo').html('Welcome to the ECOMΛSH');
     }
 };
 

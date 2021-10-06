@@ -96,7 +96,7 @@ var minimapMobs = {},
         103: ["Energy Regen"],
         104: ["Missile Speed"]
     },
-    emoteById = ["tf", "pepe", "clap", "lol", "bro", "kappa", "cry", "rage"],
+    emoteById = ["tf", "pepe", "clap", "lol", "bro", "eco", "cry", "rage"],
     powerupNameById = ["", "Shield", "Inferno"];
 
 UI.show = function(selector, isInlineBlock) {
@@ -593,7 +593,7 @@ UI.parseCommand = function(chatInput) {
             UI.addChatMessage("Type /flag XX where XX is the 2-letter ISO code of a country", true);
         }
     } else if("emotes" === command) {
-        UI.addChatMessage("Emotes available: /tf /pepe /clap /lol /bro /kappa /cry /rage", true);
+        UI.addChatMessage("Emotes available: /tf /pepe /clap /lol /bro /eco /cry /rage", true);
     } else if("help" === command) {
         UI.toggleHelp();
     } else if(!("debug" === command)) {
@@ -650,7 +650,7 @@ UI.addChatMessage = function(text, isNotWarning) {
 
 UI.showChatLevel = function(e) {
     var t = null;
-    2 == e ? t = "Type /flag XX where XX is the 2-letter ISO code of a country" : 3 == e ? t = "Emotes available: /tf /pepe /clap /lol /bro /kappa /cry /rage" : 4 == e && (t = "Flag Pack #1: communist confederate imperial rainbow jolly"),
+    2 == e ? t = "Type /flag XX where XX is the 2-letter ISO code of a country" : 3 == e ? t = "Emotes available: /tf /pepe /clap /lol /bro /eco /cry /rage" : 4 == e && (t = "Flag Pack #1: communist confederate imperial rainbow jolly"),
     null != t && UI.addChatMessage(t, true)
 };
 
