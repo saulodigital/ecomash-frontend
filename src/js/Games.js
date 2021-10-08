@@ -210,7 +210,7 @@ window.loginSuccess = function(loginsettings) {
 window.loginFailure = function() {};
 
 Games.playerGuest = function() {
-    UI.show('#playbutton', true);
+    UI.hide('#playbutton', true);
     UI.show('#loginbutton', true);
 };
 
