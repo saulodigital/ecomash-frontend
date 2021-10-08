@@ -2,8 +2,8 @@
 
 
 ## Setup services
-1. [leaderboard](https://github.com/eco-community/ecomash-frontend/tree/master/leaderboard)
-2. [backend](https://github.com/wight-airmash/ab-server)
+1. [leaderboard](https://github.com/eco-community/ecomash-backend/tree/master/leaderboard)
+2. [backend](https://github.com/eco-community/ecomash-backend)
 
 
 ## Building and deployment
