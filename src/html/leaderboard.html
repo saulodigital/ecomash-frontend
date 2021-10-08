@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>ECOMΛSH</title>
+        <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <link rel="shortcut icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+        <meta name="description" content=
+        "ECOMΛSH is a mod of airmash, multiplayer missile warfare browser game. Play now against other players around the ECO world!">
+        <meta name="keywords" content="ecomash, airmash, missile warfare, game, games, multiplayer game, web game, html5 game">
+        <meta property="og:title" content="ECOMΛSH">
+        <meta property="og:description" content="Multiplayer missile warfare browser game. Play now against other players around the world!">
+        <script type="text/javascript" src="https://npmcdn.com/react@15.3.0/dist/react.min.js"></script>
+        <script type="text/javascript" src="https://npmcdn.com/react-dom@15.3.0/dist/react-dom.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <style type="text/css">
+          @import url("https://fonts.googleapis.com/css?family=Montserrat");
+          body {
+            background: url("https://i.kinja-img.com/gawker-media/image/upload/m6ztwkawvypgrnn9k5o3.jpg") no-repeat center center fixed;
+            background-size: cover;
+            font-family: "Montserrat", sans-serif;
+          }
+
+          .container {
+            width: 550px;
+            margin: 80px auto;
+          }
+
+          .leadheader {
+            width: 100%;
+            height: 70px;
+            background: rgba(0, 168, 232, 0.79);
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+          }
+          .leadheader h2 {
+            margin: 0;
+            color: #fefefe;
+            padding-top: 20px;
+          }
+
+          .colheader {
+            background: rgba(254, 254, 254, 0.9);
+            width: 100%;
+            margin-left: 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+          }
+          .colheader h4 {
+            font-size: 15px;
+          }
+          .colheader .alltime {
+            cursor: pointer;
+            -webkit-user-select: none;
+               -moz-user-select: none;
+                -ms-user-select: none;
+                    user-select: none;
+          }
+          .colheader .recent {
+            cursor: pointer;
+            -webkit-user-select: none;
+               -moz-user-select: none;
+                -ms-user-select: none;
+                    user-select: none;
+          }
+
+          .users {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+            background: #fefefe;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 5px;
+            text-align: center;
+          }
+          .users .name {
+            text-align: left;
+          }
+          .users .name a {
+            padding-top: 15px;
+            vertical-align: middle;
+          }
+          .users img {
+            float: left;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid rgba(0, 168, 232, 0.79);
+            margin-right: 10px;
+          }
+          .users .rank {
+            padding-left: 6px;
+          }
+          .users:nth-of-type(odd) {
+            background: rgba(254, 254, 254, 0.9);
+          }
+          .users:nth-of-type(even) {
+            background: rgba(240, 240, 240, 0.9);
+          }
+          .users:last-child {
+            border-radius: 0 0 5px 5px;
+          }
+
+          @media (max-width: 550px) {
+            .users .name {
+              padding-left: 5px;
+            }
+
+            .container {
+              width: 100%;
+            }
+          }
+          @media (max-width: 540px) {
+            .container {
+              padding: 0;
+            }
+
+            .colheader div[class^=col-xs] {
+              padding: 0;
+            }
+
+            .users {
+              text-align: center;
+            }
+            .users img {
+              display: block;
+              float: none;
+              margin: 0 auto;
+              width: 35px;
+              height: 35px;
+            }
+            .users .name {
+              text-align: center;
+            }
+            .users .name a {
+              display: block;
+              padding-top: 4px;
+            }
+          }
+        </style>
+    </head>
+    <body>
+        <noscript>
+            <div id="big-message">
+                <div class="msg">Javascript required</div>
+                <div class="small">This game requires a Javascript enabled browser in order to run.<br>Please allow Javascript for this domain to continue.</div>
+            </div>
+        </noscript>
+
+      <div id="app"></div>
+
+        <script type="text/javascript">
+          // sorry bro, you will need to compile babel to raw js by yourself here
+          // class App extends React.Component {
+          //   constructor() {
+          //     super();
+          //     this.state = {
+          //       list: []
+          //     };
+          //     this._clickAllTime = this._clickAllTime.bind(this);
+          //     this._clickRecent = this._clickRecent.bind(this);
+          //   }
+
+          //   componentDidMount() {
+          //     const fetchInit = {
+          //       method: "GET",
+          //       mode: "cors"
+          //     };
+
+          //     fetch(`${this.props.apiURL}`, fetchInit)
+          //       .then((response) => response.json())
+          //       .then((data) => {
+          //         this.setState({
+          //           list: data
+          //         });
+          //       })
+          //       .catch((err) => console.log("fetch error : ", err));
+          //   }
+
+          //   _clickAllTime(e) {
+          //     let sorted = this.state.list.sort((a, b) => b.total_score - a.total_score);
+          //     this.setState(sorted);
+          //   }
+
+          //   _clickRecent(e) {
+          //     let sorted = this.state.list.sort(
+          //       (a, b) =>
+          //         new Date(a.last_played).getTime() - new Date(b.last_played).getTime()
+          //     );
+          //     this.setState(sorted);
+          //   }
+
+          //   render() {
+          //     let userlist = this.state.list.map((user, i) => (
+          //       <User
+          //         name={user.name}
+          //         rank={i + 1}
+          //         last_played={user.last_played}
+          //         total_score={user.total_score}
+          //       />
+          //     ));
+
+          //     return (
+          //       <div className="container">
+          //         <LeaderboardHeader />
+          //         <ColumnHeader
+          //           onClickAll={this._clickAllTime}
+          //           onClick={this._clickRecent}
+          //         />
+          //         {userlist}
+          //       </div>
+          //     );
+          //   }
+          // }
+
+          // const LeaderboardHeader = () => {
+          //   return (
+          //     <div className="leadheader">
+          //       <h2>Leaderboard</h2>
+          //     </div>
+          //   );
+          // };
+
+          // const ColumnHeader = ({ onClick, onClickAll }) => (
+          //   <div className="row colheader">
+          //     <div className="col-xs-1">
+          //       <h4>#</h4>
+          //     </div>
+          //     <div className="col-xs-4">
+          //       <h4>Name</h4>
+          //     </div>
+          //     <div className="col-xs-4 recent">
+          //       <h4 onClick={onClick}>Last Played</h4>
+          //     </div>
+          //     <div className="col-xs-3 alltime">
+          //       <h4 onClick={onClickAll}>Total Score</h4>
+          //     </div>
+          //   </div>
+          // );
+
+          // const User = ({ rank, name, last_played, total_score }) => {
+          //   return (
+          //     <div className="row users  vcenter">
+          //       <div className="col-xs-1 rank">
+          //         <h4>{rank}</h4>
+          //       </div>
+          //       <div className="col-xs-5">{name}</div>
+          //       <div className="col-xs-5">
+          //         <h4>{new Date(last_played).toDateString()}</h4>
+          //       </div>
+          //       <div className="col-xs-3">
+          //         <h4>{total_score}</h4>
+          //       </div>
+          //     </div>
+          //   );
+          // };
+
+          // ReactDOM.render(
+          //   <App apiURL="http://localhost:8001/users" />,
+          //   document.getElementById("app")
+          // );
+
+          class App extends React.Component {
+            constructor() {
+              super();
+              this.state = {
+                list: [] };
+
+              this._clickAllTime = this._clickAllTime.bind(this);
+              this._clickRecent = this._clickRecent.bind(this);
+            }
+
+            componentDidMount() {
+              const fetchInit = {
+                method: "GET",
+                mode: "cors" };
+
+
+              fetch(`${this.props.apiURL}`, fetchInit).
+              then(response => response.json()).
+              then(data => {
+                this.setState({
+                  list: data });
+
+              }).
+              catch(err => console.log("fetch error : ", err));
+            }
+
+            _clickAllTime(e) {
+              let sorted = this.state.list.sort((a, b) => b.total_score - a.total_score);
+              this.setState(sorted);
+            }
+
+            _clickRecent(e) {
+              let sorted = this.state.list.sort(
+              (a, b) =>
+              new Date(a.last_played).getTime() - new Date(b.last_played).getTime());
+
+              this.setState(sorted);
+            }
+
+            render() {
+              let userlist = this.state.list.map((user, i) => /*#__PURE__*/
+              React.createElement(User, {
+                name: user.name,
+                rank: i + 1,
+                last_played: user.last_played,
+                total_score: user.total_score }));
+
+
+
+              return /*#__PURE__*/(
+                React.createElement("div", { className: "container" }, /*#__PURE__*/
+                React.createElement(LeaderboardHeader, null), /*#__PURE__*/
+                React.createElement(ColumnHeader, {
+                  onClickAll: this._clickAllTime,
+                  onClick: this._clickRecent }),
+
+                userlist));
+
+
+            }}
+
+
+          const LeaderboardHeader = () => {
+            return /*#__PURE__*/(
+              React.createElement("div", { className: "leadheader" }, /*#__PURE__*/
+              React.createElement("h2", null, "Leaderboard")));
+
+
+          };
+
+          const ColumnHeader = ({ onClick, onClickAll }) => /*#__PURE__*/
+          React.createElement("div", { className: "row colheader" }, /*#__PURE__*/
+          React.createElement("div", { className: "col-xs-1" }, /*#__PURE__*/
+          React.createElement("h4", null, "#")), /*#__PURE__*/
+
+          React.createElement("div", { className: "col-xs-4" }, /*#__PURE__*/
+          React.createElement("h4", null, "Name")), /*#__PURE__*/
+
+          React.createElement("div", { className: "col-xs-4 recent" }, /*#__PURE__*/
+          React.createElement("h4", { onClick: onClick }, "Last Played")), /*#__PURE__*/
+
+          React.createElement("div", { className: "col-xs-3 alltime" }, /*#__PURE__*/
+          React.createElement("h4", { onClick: onClickAll }, "Total Score")));
+
+
+
+
+          const User = ({ rank, name, last_played, total_score }) => {
+            return /*#__PURE__*/(
+              React.createElement("div", { className: "row users  vcenter" }, /*#__PURE__*/
+              React.createElement("div", { className: "col-xs-1 rank" }, /*#__PURE__*/
+              React.createElement("h4", null, rank)), /*#__PURE__*/
+
+              React.createElement("div", { className: "col-xs-5" }, name), /*#__PURE__*/
+              React.createElement("div", { className: "col-xs-5" }, /*#__PURE__*/
+              React.createElement("h4", null, new Date(last_played).toDateString())), /*#__PURE__*/
+
+              React.createElement("div", { className: "col-xs-3" }, /*#__PURE__*/
+              React.createElement("h4", null, total_score))));
+          };
+
+          ReactDOM.render( /*#__PURE__*/
+          React.createElement(App, { apiURL: "https://ecomash.io/users" }),
+          document.getElementById("app"));
+        </script>
+    </body>
+</html>

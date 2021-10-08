@@ -33,6 +33,7 @@ module.exports = {
     }),
     new CopyPlugin([
       { from: './src/assets', to: 'assets' },
+      { from: './src/html/leaderboard.html', to: 'leaderboard.html' },
       { from: './src/robots.txt', to: 'robots.txt' },
     ]),
     new HtmlWebpackPlugin({
