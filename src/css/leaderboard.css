@@ -19,76 +19,6 @@ html {
 	box-sizing: border-box
 }
 
-.container:after,
-.container:before,
-.row:after,
-.row:before {
-	display: table;
-	content: " "
-}
-
-.clearfix:after,
-.container:after,
-.row:after {
-	clear: both
-}
-
-.col {
-	position: relative;
-	min-height: 1px;
-	padding-right: 15px;
-	padding-left: 15px;
-	float: left
-}
-
-.col-xs-12 {
-	width: 100%
-}
-
-.col-xs-11 {
-	width: 91.66666667%
-}
-
-.col-xs-10 {
-	width: 83.33333333%
-}
-
-.col-xs-9 {
-	width: 75%
-}
-
-.col-xs-8 {
-	width: 66.66666667%
-}
-
-.col-xs-7 {
-	width: 58.33333333%
-}
-
-.col-xs-6 {
-	width: 50%
-}
-
-.col-xs-5 {
-	width: 41.66666667%
-}
-
-.col-xs-4 {
-	width: 33.33333333%
-}
-
-.col-xs-3 {
-	width: 25%
-}
-
-.col-xs-2 {
-	width: 16.66666667%
-}
-
-.col-xs-1 {
-	width: 8.33333333%
-}
-
 body {
 	margin: 0;
 	background: url("../img/leaderboard.jpg") no-repeat center center fixed;
@@ -97,15 +27,16 @@ body {
 	line-height: 1.43
 }
 
-.app {
+#app {
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	padding: 30px auto;
+	align-items: flex-start;
+	padding: 70px;
 	min-height: 100vh
 }
 
 .container {
+	padding: 18px;
 	min-width: 50%;
 	color:#fff;
 	background-color: rgba(0, 0, 0, 0.75);
@@ -120,28 +51,36 @@ body {
 	user-select: none
 }
 
+.row::after,
+.row::before {
+	display: table;
+	content: " "
+}
+
+.clearfix::after,
+.container::after,
+.row:after {
+	clear: both
+}
+
 .leadheader {
-	width: 100%;
-	height: 70px;
 	text-align: center;
 }
 
 .leadheader h2 {
 	margin: 0;
-	padding-top: 20px;
+	padding: 20px 20px 50px
 }
 
-.colheader {
+.row-header {
 	width: 100%;
-	margin: 0;
+	margin: 0 0 18px;
 	font-size: 18px;
-	text-align: center;
 	color: #8c8c8c;
 	border-bottom: 1px solid hsla(0, 0%, 100%, .1)
 }
 
-.colheader .rank,
-.colheader .name {
+.row-header .col {
 	cursor: default;
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -149,16 +88,12 @@ body {
 	user-select: none
 }
 
-.colheader .date,
-.colheader .score {
-	cursor: pointer;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none
+.row-header .col-date,
+.row-header .col-score {
+	cursor: pointer
 }
 
-.users {
+.row-users {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
@@ -167,43 +102,74 @@ body {
 	height: 100%;
 	margin: 0;
 	padding: 5px;
-	text-align: center
 }
 
-.users:hover {
+.row p {
+	margin: 3px
+}
+
+.row-users:hover {
 	border-radius: 5px;
 	background-color: hsla(0, 0%, 100%, .1)
 }
 
-.users .rank:nth-child(1),
-.users .name:nth-child(1) {
+.col {
+	position: relative;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 15px;
+	float: left
+}
+
+.col-rank {
+	width: 15%
+}
+
+.col-name {
+	width: 35%
+}
+
+.col-score {
+	width: 25%
+}
+
+.col-date {
+	width: 25%
+}
+
+.container div:nth-child(3) .col-rank,
+.container div:nth-child(3) .col-name {
 	font-weight: bold;
 	color: #e78532
 }
 
-.users .rank:nth-child(2),
-.users .name:nth-child(2) {
+.container div:nth-child(4) .col-rank,
+.container div:nth-child(4) .col-name {
 	font-weight: bold;
 	color: #8c8c8c
 }
 
-.users .rank:nth-child(3),
-.users .name:nth-child(3) {
+.container div:nth-child(5) .col-rank,
+.container div:nth-child(5) .col-name {
 	font-weight: bold;
 	color: #8e6337
 }
 
 @media (max-width: 540px) {
+	#app {
+		padding: 30px
+	}
+
 	.container {
 		padding: 0
 	}
 
-	.colheader div[class^=col-xs] {
+	.colheader .col {
 		padding: 0
 	}
 }
 
-@media (max-width: 550px) {
+@media (min-width: 550px) {
 	.container {
 		width: 100%
 	}
