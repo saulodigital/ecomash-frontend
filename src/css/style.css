@@ -4472,8 +4472,3 @@ only screen and (min-height:600px) and (max-height:1024px) and (max-width:1024px
         transform: scale(.95)
     }
 }
-
-.leaderboard {
-    /* Godlike frontend editing skills :)  */
-    background-color: #b37502;
-}
