@@ -14,5 +14,4 @@ The output will be created in `dist/`, and can be served using a local web serve
 
 For development, `DEBUG=1 npm run build` cuts build time down by disabling minification.
 
-<img alt="preview image" src="../src/img/preview.png" width="100%" height="100%" >
-
+<img src="/src/img/preview.png" alt="preview image" width="100%" height="100%">
