@@ -212,6 +212,7 @@ window.loginFailure = function() {};
 Games.playerGuest = function() {
     UI.hide('#playbutton', true);
     UI.show('#loginbutton', true);
+    UI.show('#leaderboardbutton', true);
 };
 
 Games.playerAuth = function() {
@@ -263,7 +264,7 @@ var refreshGamesData = function(callback, fromMainPage) {
         dataType: 'json',
         cache: false,
         success: function(response) {
-            gamesData = [{"name":"ECO world","id":"eco","games":[{"type":"1","id":"eco_id","name":"Free For All","nameShort":"ECO #1","host":`${game.modBackendUrl}`,"path":""}]}]
+            gamesData = [{"name":"ECO World","id":"eco","games":[{"type":"1","id":"eco_id","name":"Free For All","nameShort":"FFA #1","host":`${game.modBackendUrl}`,"path":""}]}]
 
             // Set flag from country code in response
             if (game.myFlag == 'xx') {
