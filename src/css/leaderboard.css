@@ -175,6 +175,24 @@ body {
 	background-color: hsla(0, 0%, 100%, .1)
 }
 
+.users .rank:nth-child(1),
+.users .name:nth-child(1) {
+	font-weight: bold;
+	color: #e78532
+}
+
+.users .rank:nth-child(2),
+.users .name:nth-child(2) {
+	font-weight: bold;
+	color: #8c8c8c
+}
+
+.users .rank:nth-child(3),
+.users .name:nth-child(3) {
+	font-weight: bold;
+	color: #8e6337
+}
+
 @media (max-width: 540px) {
 	.container {
 		padding: 0
