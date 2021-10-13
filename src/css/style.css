@@ -118,7 +118,8 @@ input:focus {
     position: absolute;
     top: 40%;
     left: 50%;
-    transform: translate3d(-50%, -50%, 0);
+    margin-top: -200px;
+    margin-left: -200px;
     width: 400px;
     background-color: rgba(0, 0, 0, 0.75);
     box-shadow: 0 10px 59px -9px rgba(0, 0, 0, 0.7);
@@ -1186,21 +1187,21 @@ input:focus {
 }
 
 #footer {
+    cursor: default;
     position: absolute;
-    left: 50%;
-    transform: translate3d(-50%, 0, 0);
     bottom: 20px;
-    white-space: nowrap;
-    text-align: center;
-    font-size: 12px;
-    text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
-    color: #c8c8c8;
-    cursor: default
+    left: 50%;
+    transform: translate3d(-50%, 0, 0)
 }
 
 #footer p {
     position: relative;
+    width: 100%;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 12px;
     color: #8c8c8c;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.8)
 }
 
 #logout {
