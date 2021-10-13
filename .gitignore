@@ -2,13 +2,14 @@ spatiebot
 
 # node
 node_modules
+package-lock.json
 dist
 
 # logs
 *.log
 
 # files and IDE
-.DS_STORE
+**/.DS_Store
 *~
 *.swp
 *.swo
