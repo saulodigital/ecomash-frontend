@@ -1,4 +1,23 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@font-face {
+    font-family: 'MontserratWeb';
+    font-style: normal;
+    font-weight: 400;
+    src: url("../assets/montserrat-semibold.woff2") format('woff2'), url("../assets/montserrat-semibold.woff") format('woff')
+}
+
+@font-face {
+    font-family: 'MontserratWeb';
+    font-style: normal;
+    font-weight: 700;
+    src: url("../assets/montserrat-bold.woff2") format('woff2'), url("../assets/montserrat-bold.woff") format('woff')
+}
+
+@font-face {
+    font-family: 'MontserratWeb';
+    font-style: normal;
+    font-weight: 800;
+    src: url("../assets/montserrat-extrabold.woff2") format('woff2'), url("../assets/montserrat-extrabold.woff") format('woff')
+}
 
 html {
 	font-family: sans-serif;
@@ -23,7 +42,7 @@ body {
 	margin: 0;
 	background: url("../img/leaderboard.jpg") no-repeat center center fixed;
 	background-size: cover;
-	font-family: "Montserrat", sans-serif;
+	font-family: "MontserratWeb", sans-serif;
 	line-height: 1.43
 }
 
@@ -161,11 +180,11 @@ body {
 	}
 
 	.container {
-		padding: 0
+		padding: 0;
 	}
 
-	.colheader .col {
-		padding: 0
+	.row-header .col {
+		font-size: 14px;
 	}
 }
 
