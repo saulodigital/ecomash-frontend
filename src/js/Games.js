@@ -90,9 +90,6 @@ Games.setup = function() {
     $('#login-twitter').on('click', function() {
         Games.popupLogin(3)
     });
-    $('#login-reddit').on('click', function() {
-        Games.popupLogin(4)
-    });
     $('#login-twitch').on('click', function() {
         Games.popupLogin(5)
     });
@@ -223,7 +220,7 @@ Games.playerAuth = function() {
             if (remoteSettings != null) {
                 game.loggedIn = true;
 
-                let identityProvider = ['', 'Microsoft', 'Google', 'Twitter', 'Reddit', 'Twitch'][config.auth.identityprovider || 0];
+                let identityProvider = ['', 'Microsoft', 'Google', 'Twitter', 'Twitch'][config.auth.identityprovider || 0];
                 let htmlName = UI.escapeHTML((config.auth.loginname || '').substr(0, 30));
                 htmlName += `<span class="grey">(${identityProvider})</span>`;
 

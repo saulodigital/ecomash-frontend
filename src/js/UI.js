@@ -1925,9 +1925,6 @@ UI.setup = function() {
         Sound.UIClick(),
         UI.nameEntered()
     }),
-    $("#playername").on("keypress", function(e) {
-        13 === e.which && UI.nameEntered()
-    }),
     window.onerror = function(e, t, n, r, i) {
         game.state !== Network.STATE.PLAYING && game.state !== Network.STATE.CONNECTING || Tools.handleError({
             msg: e,
